@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import styles from "./ContactList.module.css";
+import s from "./ContactList.module.css";
 
 const ContactList = ({ contacts, filterText, handleDelete }) => {
   const filteredContacts = contacts.filter(({ name }) =>
@@ -9,15 +9,15 @@ const ContactList = ({ contacts, filterText, handleDelete }) => {
   );
 
   return (
-    <ul className={styles.contactsList}>
+    <ul className={s.contactsList}>
       {filteredContacts.map(({ id, name, number }) => (
-        <li key={id} className={styles.contactsItem}>
-          <p className={styles.contactsName}>
+        <li key={id} className={s.contactsItem}>
+          <p className={s.contactsName}>
             {name}: {number}
           </p>
 
           <button
-            className={styles.contactsBtn}
+            className={s.contactsBtn}
             type="button"
             onClick={() => handleDelete(id)}
           >
